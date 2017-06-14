@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel;
+using CustomizingXamarinForms;
+using CustomizingXamarinForms.UWP;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
+[assembly: ExportRenderer(typeof(SketchView), typeof(SketchViewRenderer))]
 namespace CustomizingXamarinForms.UWP
 {
     class SketchViewRenderer : ViewRenderer<SketchView, PaintView>

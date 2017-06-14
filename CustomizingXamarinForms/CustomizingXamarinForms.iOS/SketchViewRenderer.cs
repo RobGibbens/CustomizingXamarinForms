@@ -1,6 +1,10 @@
 ﻿using System.ComponentModel;
+using CustomizingXamarinForms;
+using CustomizingXamarinForms.iOS;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
+[assembly: ExportRenderer(typeof(SketchView), typeof(SketchViewRenderer))]
 namespace CustomizingXamarinForms.iOS
 {
     class SketchViewRenderer : ViewRenderer<SketchView, PaintView>

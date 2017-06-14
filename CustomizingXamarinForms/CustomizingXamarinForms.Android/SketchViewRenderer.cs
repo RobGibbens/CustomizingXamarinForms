@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel;
+using CustomizingXamarinForms;
+using CustomizingXamarinForms.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: ExportRenderer(typeof(SketchView), typeof(SketchViewRenderer))]
 namespace CustomizingXamarinForms.Droid
 {
     class SketchViewRenderer : ViewRenderer<SketchView, PaintView>
