@@ -15,7 +15,7 @@ namespace CustomizingXamarinForms
 
 	    private void ChangeColors_OnClicked(object sender, EventArgs e)
 	    {
-
-	    }
+	        sketchView.InkColor = helpers.GetRandomColor();
+        }
 	}
 }
