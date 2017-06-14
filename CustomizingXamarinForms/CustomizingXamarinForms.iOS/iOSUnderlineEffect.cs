@@ -44,6 +44,13 @@ namespace CustomizingXamarinForms.iOS
             text.RemoveAttribute(UIStringAttributeKey.UnderlineStyle, range);
         }
 
+        protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
+        {
+            base.OnElementPropertyChanged(args);
+
+            AddUnderline();
+        }
+
         protected override void OnAttached()
         {
             AddUnderline();

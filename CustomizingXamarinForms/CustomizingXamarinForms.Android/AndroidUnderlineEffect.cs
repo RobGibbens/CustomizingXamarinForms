@@ -23,6 +23,13 @@ namespace CustomizingXamarinForms.Droid
             textView.PaintFlags &= ~PaintFlags.UnderlineText;
         }
 
+        protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
+        {
+            base.OnElementPropertyChanged(args);
+
+            AddUnderline();
+        }
+
         protected override void OnAttached()
         {
             AddUnderline();

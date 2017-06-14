@@ -44,6 +44,13 @@ namespace CustomizingXamarinForms.UWP
             label.Inlines.Add(run);
         }
 
+        protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
+        {
+            base.OnElementPropertyChanged(args);
+
+            AddUnderline();
+        }
+
         protected override void OnAttached()
         {
             AddUnderline();
