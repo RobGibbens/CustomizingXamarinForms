@@ -20,6 +20,7 @@
       <DependentUpon>SignaturePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SketchView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnderlineEffect.cs" />
   </ItemGroup>
   <ItemGroup>
