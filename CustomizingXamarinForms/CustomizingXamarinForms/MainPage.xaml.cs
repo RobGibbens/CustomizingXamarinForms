@@ -109,7 +109,27 @@ namespace CustomizingXamarinForms
 
             mainLayout.Children.Add(xamarinFormsView, 0, 5);
 
-            
+            mainLayout.Children.RemoveAt(5);
+            var actionButton = new Android.Support.Design.Widget.FloatingActionButton(Forms.Context);
+
+            actionButton.SetImageResource(Droid.Resource.Drawable.pencil);
+            actionButton.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Xamarin.Forms.Platform.Android.ColorExtensions.ToAndroid(Color.FromHex("#d0eeaa")));
+
+            actionButton.Click += async (s, e) =>
+            {
+                await Navigation.PushAsync(new SignaturePage());
+            };
+
+            var actionButtonFrame = new Android.Widget.FrameLayout(Forms.Context);
+            actionButtonFrame.SetClipToPadding(false);
+            actionButtonFrame.SetPadding(0, 0, 50, 50);
+            actionButtonFrame.AddView(actionButton);
+
+            var actionButtonFrameView = Xamarin.Forms.Platform.Android.LayoutExtensions.ToView(actionButtonFrame);
+            actionButtonFrameView.HorizontalOptions = LayoutOptions.End;
+            actionButtonFrameView.VerticalOptions = LayoutOptions.End;
+
+            mainLayout.Children.Add(actionButtonFrameView, 0, 8);
 #endif
         }
 
