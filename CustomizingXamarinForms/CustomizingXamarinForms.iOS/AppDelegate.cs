@@ -23,7 +23,11 @@ namespace CustomizingXamarinForms.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
-			LoadApplication (new CustomizingXamarinForms.App ());
+
+		    UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(red: 69, green: 113, blue: 134);
+		    UINavigationBar.Appearance.TintColor = UIColor.White;
+
+            LoadApplication (new CustomizingXamarinForms.App ());
 
 			return base.FinishedLaunching (app, options);
 		}
