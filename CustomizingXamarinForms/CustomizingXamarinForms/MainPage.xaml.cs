@@ -53,6 +53,7 @@ namespace CustomizingXamarinForms
 
             AddNativeAndroidControls();
             AddNativeIOSControls();
+            AddNativeWindowsControls();
         }
 
         private void AddNativeAndroidControls()
@@ -148,6 +149,54 @@ namespace CustomizingXamarinForms
             mainLayout.Children.Add(controlView, left:0, top:5);
 #endif
         }
+
+        private void AddNativeWindowsControls()
+        {
+#if WINDOWS_UWP
+            var femaleButton = new Windows.UI.Xaml.Controls.RadioButton
+            {
+                Content = "Female",
+                GroupName = "Radios",
+                IsChecked = true
+            };
+            var femaleView = Xamarin.Forms.Platform.UWP.LayoutExtensions.ToView(femaleButton);
+
+            var maleButton = new Windows.UI.Xaml.Controls.RadioButton
+            {
+                Content = "Male",
+                GroupName = "Radios",
+                IsChecked = false
+            };
+            var maleView = Xamarin.Forms.Platform.UWP.LayoutExtensions.ToView(maleButton);
+
+            var otherButton = new Windows.UI.Xaml.Controls.RadioButton
+            {
+                Content = "Other",
+                GroupName = "Radios",
+                IsChecked = false
+            };
+            var otherView = Xamarin.Forms.Platform.UWP.LayoutExtensions.ToView(otherButton);
+
+            var notSpecifiedButton = new Windows.UI.Xaml.Controls.RadioButton
+            {
+                Content = "N/A",
+                GroupName = "Radios",
+                IsChecked = false
+            };
+            var notSpecifiedView = Xamarin.Forms.Platform.UWP.LayoutExtensions.ToView(notSpecifiedButton);
+
+            var stackpanel = new StackLayout() { Orientation = StackOrientation.Horizontal };
+            stackpanel.Children.Add(femaleView);
+            stackpanel.Children.Add(maleView);
+            stackpanel.Children.Add(otherView);
+            stackpanel.Children.Add(notSpecifiedView);
+
+            mainLayout.Children.RemoveAt(5);
+            mainLayout.Children.Add(stackpanel, left: 0, top: 5);
+
+#endif
+        }
+
         async void SignDocument_Clicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new SignaturePage());
