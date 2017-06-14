@@ -58,7 +58,7 @@ namespace CustomizingXamarinForms
 
         private void Save_OnClicked(object sender, EventArgs e)
         {
-
+            registerLabel.TextColor = helpers.GetRandomColor();
         }
     }
 }
