@@ -4,7 +4,7 @@ namespace CustomizingXamarinForms
 {
     class UnderlineEffect : RoutingEffect
     {
-        public UnderlineEffect() : base("")
+        public UnderlineEffect() : base("Xamarin.UnderlineEffect")
         {
         }
     }
