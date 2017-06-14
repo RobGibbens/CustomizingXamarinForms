@@ -9,8 +9,10 @@ using Android.OS;
 
 namespace CustomizingXamarinForms.Droid
 {
-	[Activity (Label = "CustomizingXamarinForms", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    [Activity(Label = "WebinarDemo2", Icon = "@drawable/icon", 
+        Theme = "@style/MyCustomTheme", 
+        MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
