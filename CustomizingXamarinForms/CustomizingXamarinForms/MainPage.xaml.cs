@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace CustomizingXamarinForms
@@ -49,6 +50,67 @@ namespace CustomizingXamarinForms
                     }
                     break;
             }
+
+            AddNativeAndroidControls();
+        }
+
+        private void AddNativeAndroidControls()
+        {
+#if __ANDROID__
+            var radioGroup =
+                new Android.Widget.RadioGroup(Forms.Context)
+                {
+                    Orientation = Android.Widget.Orientation.Horizontal,
+                    LayoutParameters =
+                        new Android.Views.ViewGroup.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent,
+                            Android.Views.ViewGroup.LayoutParams.WrapContent)
+                };
+
+            var femaleButton = new Android.Widget.RadioButton(Forms.Context)
+            {
+                Id = 1,
+                Text = "Female"
+            };
+            femaleButton.SetTextColor(Android.Graphics.Color.Black);
+            femaleButton.LayoutParameters = new Android.Views.ViewGroup.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent);
+            radioGroup.AddView(femaleButton);
+
+
+            var maleButton = new Android.Widget.RadioButton(Forms.Context)
+            {
+                Id = 2,
+                Text = "Male"
+            };
+            maleButton.SetTextColor(Android.Graphics.Color.Black);
+            maleButton.LayoutParameters = new Android.Views.ViewGroup.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent);
+            radioGroup.AddView(maleButton);
+
+            var otherButton = new Android.Widget.RadioButton(Forms.Context)
+            {
+                Id = 3,
+                Text = "Other"
+            };
+            otherButton.SetTextColor(Android.Graphics.Color.Black);
+            otherButton.LayoutParameters = new Android.Views.ViewGroup.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent);
+            radioGroup.AddView(otherButton);
+
+            var notSpecifiedButton = new Android.Widget.RadioButton(Forms.Context)
+            {
+                Id = 4,
+                Text = "Not specified"
+            };
+            notSpecifiedButton.SetTextColor(Android.Graphics.Color.Black);
+            notSpecifiedButton.LayoutParameters = new Android.Views.ViewGroup.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent);
+            radioGroup.AddView(notSpecifiedButton);
+
+            var xamarinFormsView = Xamarin.Forms.Platform.Android.LayoutExtensions.ToView(radioGroup);
+
+            mainLayout.Children.RemoveAt(5);
+
+            mainLayout.Children.Add(xamarinFormsView, 0, 5);
+
+            
+#endif
         }
 
         async void SignDocument_Clicked(object sender, EventArgs args)
