@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Webinar"
+             Padding="5"
+             x:Class="CustomizingXamarinForms.MainPage">
+
+    <Grid x:Name="mainLayout">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="registerLabel" 
+                Text="Register this device" 
+                Grid.Row="0"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center">
+        </Label>
+
+        <Entry Grid.Row="1" Placeholder="Name" PlaceholderColor="Gray" />
+        <Entry Grid.Row="2" Placeholder="Street" PlaceholderColor="Gray" />
+        <Entry Grid.Row="3" Placeholder="City" PlaceholderColor="Gray" />
+        <Entry Grid.Row="4" Placeholder="State" PlaceholderColor="Gray" />
+        <Picker Grid.Row="5">
+            <Picker.Items>
+                <x:String>Female</x:String>
+                <x:String>Male</x:String>
+                <x:String>Other</x:String>
+                <x:String>Not specified</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button 
+            x:Name="signDocument" 
+            Grid.Row="6" Text="Sign document"  
+            Clicked="SignDocument_Clicked"/>
+
+        <Button x:Name="save" Text="Save" Grid.Row="7" Clicked="Save_OnClicked" />
+    </Grid>
+
+</ContentPage>
