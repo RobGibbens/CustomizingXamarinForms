@@ -52,6 +52,7 @@ namespace CustomizingXamarinForms
             }
 
             AddNativeAndroidControls();
+            AddNativeIOSControls();
         }
 
         private void AddNativeAndroidControls()
@@ -133,6 +134,20 @@ namespace CustomizingXamarinForms
 #endif
         }
 
+        private void AddNativeIOSControls()
+        {
+#if __IOS__
+            var control = new UIKit.UISegmentedControl(new CoreGraphics.CGRect(x:20, y:20, width:280, height:40));
+            control.InsertSegment("Female", pos:0, animated:false);
+			control.InsertSegment("Male", pos: 1, animated: false);
+			control.InsertSegment("Other", pos:2, animated:false);
+			control.InsertSegment("N/A", pos: 3, animated: false);
+			control.SelectedSegment = 0;
+            var controlView = Xamarin.Forms.Platform.iOS.LayoutExtensions.ToView(control);
+            mainLayout.Children.RemoveAt(5);
+            mainLayout.Children.Add(controlView, left:0, top:5);
+#endif
+        }
         async void SignDocument_Clicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new SignaturePage());
