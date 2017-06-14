@@ -8,7 +8,7 @@
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="Android" Value="5" />
             <On Platform="Windows" Value="5" />
-            <On Platform="iOS" Value="20" />
+            <On Platform="iOS" Value="5,20,5,5" />
         </OnPlatform>
     </ContentPage.Padding>
     
