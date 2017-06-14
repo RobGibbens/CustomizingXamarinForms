@@ -1,15 +1,10 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.App;
 using Android.OS;
+using Button = Android.Widget.Button;
 
 namespace NativeEmbedding.Droid
 {
-	[Activity (Label = "NativeEmbedding.Android", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity (Label = "NativeEmbedding.Android", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/MyTheme")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
@@ -26,10 +21,8 @@ namespace NativeEmbedding.Droid
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+                StartActivity(typeof(RegisteredDevicesActivity));
 			};
 		}
 	}
 }
-
-
