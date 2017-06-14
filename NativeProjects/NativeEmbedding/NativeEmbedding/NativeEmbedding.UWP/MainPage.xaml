@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="Show Registered Devices" HorizontalAlignment="Center" Click="Button_Click" />
+        <ContentControl Name="listView" Height="200" Width="200"></ContentControl>
+    </StackPanel>
 </Page>
