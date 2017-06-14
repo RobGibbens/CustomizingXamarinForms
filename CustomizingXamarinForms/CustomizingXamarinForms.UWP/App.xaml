@@ -5,4 +5,10 @@
     xmlns:local="using:CustomizingXamarinForms.UWP"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="DarkBlue" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+    </Application.Resources>
 </Application>
