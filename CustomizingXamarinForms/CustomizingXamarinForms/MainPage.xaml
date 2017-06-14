@@ -2,9 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Webinar"
-             Padding="5"
              x:Class="CustomizingXamarinForms.MainPage">
 
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android" Value="5" />
+            <On Platform="Windows" Value="5" />
+            <On Platform="iOS" Value="20" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    
     <Grid x:Name="mainLayout">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
