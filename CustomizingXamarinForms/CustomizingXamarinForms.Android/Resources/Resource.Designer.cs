@@ -3529,6 +3529,9 @@ namespace CustomizingXamarinForms.Droid
 			// aapt resource value: 0x7f0a0173
 			public const int MainTheme_Base = 2131362163;
 			
+			// aapt resource value: 0x7f0a0175
+			public const int MyCustomTheme = 2131362165;
+			
 			// aapt resource value: 0x7f0a0032
 			public const int Platform_AppCompat = 2131361842;
 			
