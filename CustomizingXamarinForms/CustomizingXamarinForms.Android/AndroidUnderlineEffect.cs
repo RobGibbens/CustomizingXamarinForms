@@ -1,7 +1,11 @@
 ﻿using Android.Graphics;
 using Android.Widget;
+using CustomizingXamarinForms.Droid;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+[assembly: ResolutionGroupName("Xamarin")]
+[assembly: ExportEffect(typeof(AndroidUnderlineEffect), "UnderlineEffect")]
 namespace CustomizingXamarinForms.Droid
 {
     public class AndroidUnderlineEffect : PlatformEffect

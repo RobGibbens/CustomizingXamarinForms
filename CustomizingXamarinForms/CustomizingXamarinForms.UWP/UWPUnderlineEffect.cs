@@ -1,7 +1,11 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
+using CustomizingXamarinForms.UWP;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
+[assembly: ResolutionGroupName("Xamarin")]
+[assembly: ExportEffect(typeof(UWPUnderlineEffect), "UnderlineEffect")]
 namespace CustomizingXamarinForms.UWP
 {
     public class UWPUnderlineEffect : PlatformEffect

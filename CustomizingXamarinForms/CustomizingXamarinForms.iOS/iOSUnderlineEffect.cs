@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using CustomizingXamarinForms.iOS;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
+[assembly: ResolutionGroupName("Xamarin")]
+[assembly: ExportEffect(typeof(iOSUnderlineEffect), "UnderlineEffect")]
 namespace CustomizingXamarinForms.iOS
 {
     public class iOSUnderlineEffect : PlatformEffect
