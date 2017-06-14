@@ -1,13 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customizingXamarinForms="clr-namespace:CustomizingXamarinForms;"
              Title="Signature"
              x:Class="CustomizingXamarinForms.SignaturePage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Change Colors" Clicked="ChangeColors_OnClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    
-    <Entry Placeholder="Sign here" PlaceholderColor="Black" VerticalOptions="Start" />
+
+    <customizingXamarinForms:SketchView 
+        x:Name="sketchView" 
+        HorizontalOptions="FillAndExpand" 
+        VerticalOptions="FillAndExpand" 
+        InkColor="Black" />
 
 </ContentPage>
