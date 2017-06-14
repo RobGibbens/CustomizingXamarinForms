@@ -1,6 +1,7 @@
 ﻿using System;
 
 using UIKit;
+using Xamarin.Forms;
 
 namespace NativeEmbedding.iOS
 {
@@ -18,8 +19,9 @@ namespace NativeEmbedding.iOS
 			// Perform any additional setup after loading the view, typically from a nib.
 			Button.AccessibilityIdentifier = "myButton";
 			Button.TouchUpInside += delegate {
-				var title = string.Format ("{0} clicks!", count++);
-				Button.SetTitle (title, UIControlState.Normal);
+				var devicesPage = new RegisteredDevicesPage();
+			    var devicesViewController = devicesPage.CreateViewController();
+                NavigationController.PushViewController(devicesViewController, true);
 			};
 		}
 

@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace NativeEmbedding.iOS
 {
@@ -19,6 +20,9 @@ namespace NativeEmbedding.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+
+            Forms.Init();
+
 			return true;
 		}
 
