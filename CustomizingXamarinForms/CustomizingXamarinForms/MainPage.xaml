@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customizingXamarinForms="clr-namespace:CustomizingXamarinForms;"
              Title="Webinar"
              x:Class="CustomizingXamarinForms.MainPage">
 
@@ -30,6 +31,9 @@
                 Grid.Row="0"
                 VerticalOptions="Start" 
                 HorizontalOptions="Center">
+            <Label.Effects>
+                <customizingXamarinForms:UnderlineEffect />
+            </Label.Effects>
         </Label>
 
         <Entry Grid.Row="1" Placeholder="Name" PlaceholderColor="Gray" />
