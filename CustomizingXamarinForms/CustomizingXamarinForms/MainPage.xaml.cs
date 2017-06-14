@@ -11,7 +11,20 @@ namespace CustomizingXamarinForms
 			InitializeComponent();
 
             helpers = new Helpers();
-		}
+
+		    switch (Device.RuntimePlatform)
+		    {
+		        case Device.iOS:
+		            registerLabel.Text = "Register this iOS device";
+		            break;
+		        case Device.Android:
+		            registerLabel.Text = "Register this Android tablet";
+		            break;
+		        case Device.Windows:
+		            registerLabel.Text = "Register this Windows device";
+		            break;
+		    }
+        }
 
         async void SignDocument_Clicked(object sender, EventArgs args)
         {
