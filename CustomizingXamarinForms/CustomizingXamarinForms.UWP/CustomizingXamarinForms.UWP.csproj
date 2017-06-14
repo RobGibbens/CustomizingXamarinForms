@@ -99,7 +99,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PaintView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SketchViewRenderer.cs" />
     <Compile Include="UWPUnderlineEffect.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -91,6 +91,8 @@
     <Compile Include="iOSUnderlineEffect.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="PaintView.cs" />
+    <Compile Include="SketchViewRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
