@@ -5,6 +5,8 @@
 
     <ListView ItemsSource="{Binding Devices}"
             ItemTapped="Handle_ItemTapped"
+            HasUnevenRows="true"
+            RowHeight="40"
             CachingStrategy="RecycleElement">
             
     <ListView.ItemTemplate>
